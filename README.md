@@ -1,6 +1,6 @@
 # Simple Linear Regression
 
--Only functional with bivariate data (x and y, where x is the sole feature and y is the target) and not multivariate data-
+*Only functional with bivariate data (x and y, where x is the sole feature and y is the target) and not multivariate data*
  
 This is a class which can be used to calculate a least squares regression line with the dependent variable y
 and independent variable x.
@@ -13,13 +13,13 @@ The equation used to calculate the gradient is:
 
 a = SP ÷ SS where SP is the sum of products and SS is the sum of squares in the data.
 
-SP = Σ(x - x̅)<sup>2</sup>
+**SP = Σ(x - x̅)<sup>2</sup>**
 
-SS = Σ(x - x̅)(y - y̅)
+**SS = Σ(x - x̅)(y - y̅)**
 
 The equation used to calculate the y-intercept is:
 
-b = y̅ - bx̅
+**b = y̅ - bx̅**
 
 # How to use:
 
