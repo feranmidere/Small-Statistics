@@ -1,5 +1,6 @@
 # Simple Linear Regression
 
+-Only functional with bivariate data (x and y, where x is the sole feature and y is the target) and not multivariate data-
  
 This is a function which can be used to display the equation of a least squares regression line with the dependent variable y
 and independent variable x.
