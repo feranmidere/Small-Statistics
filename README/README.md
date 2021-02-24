@@ -11,19 +11,19 @@ The model uses the formula ŷ = ax + b where a is the gradient and b is the y-in
 
 The equation used to calculate the gradient is:
 
-a = \frac{SP}{SS} where SP is the sum of products and SS is the sum of squares in the data.
+![](equaimage.png)
 
-**SP<sub>x</sub> = Σ(x - x̅)<sup>2</sup>**
+![](SS.png)
 
-**SS = Σ(x - x̅)(y - y̅)**
+![](SP.png)
 
 The equation used to calculate the y-intercept is:
 
-**b = y̅ - ax̅**
+![](equaimage(1).png)
 
 The fit method will also calculate the product moment correlation coefficient using the equation:
 
-**r =\frac{\sum\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum\left(x_{i}-\bar{x}\right)^{2} \sum\left(y_{i}-\bar{y}\right)^{2}}}**
+![](r.png)
 
 # How to use:
 
