@@ -19,3 +19,6 @@ class SimpleLinearRegression:
        
     def predict(self, x, dplaces=3):
         return round(self.a*x+self.b, dplaces)
+    
+    def geteq(self):
+        return 'y = {0}x + {1}'.format(a,b)
