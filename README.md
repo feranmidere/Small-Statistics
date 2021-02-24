@@ -15,7 +15,7 @@ a = SP ÷ SS where SP is the sum of products and SS is the sum of squares in the
 
 SP = Σ(x-x̅)<sup>2</sup>
 
-SS = y Σ(x-x̅)(y-y̅)
+SS = Σ(x-x̅)(y-y̅)
 
 The equation used to calculate the y-intercept is:
 
