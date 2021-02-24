@@ -1,4 +1,4 @@
-# Simple-Linear-Regression
+# Simple Linear Regression
  
 This is a function which can be used to display the equation of a least squares regression line with the dependent variable y
 and independent variable x.
