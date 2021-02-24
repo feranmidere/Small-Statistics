@@ -11,7 +11,7 @@ The equation used to calculate the gradient is:
 
 a = SP<over>SS where SP is the sum of products and SS is the sum of squares in the data.
 
-SP can be calculated by (x-x<sub>mean</sub>)$n^2$ for each value of x and taking the sum of the results.
+SP can be calculated by (x-x<sub>mean</sub>)<sup>2</sup> for each value of x and taking the sum of the results.
 
 SS can be calculated by (x-x<sub>mean</sub>)(y-y<sub>mean</sub>) for each value of x and y and taking the sum of the results.
 
