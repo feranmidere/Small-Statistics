@@ -1,7 +1,7 @@
 import numpy as np
 
 class SimpleLinearRegression:
-    def __init__(self),
+    def __init__(self):
         pass
        
     def fit(self, x, y):
