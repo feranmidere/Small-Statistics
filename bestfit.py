@@ -11,11 +11,11 @@ class SimpleLinearRegression:
         self.Mx = np.mean(x)
         self.My = np.mean(y)
 
-        self.SS = sum((x-Mx)**2)
-        self.SP = sum((x-Mx)*(y-My))
+        self.SS = sum((x-self.Mx)**2)
+        self.SP = sum((x-self.Mx)*(y-self.My))
 
-        self.a = SP/SS
-        self.b = My - (a*Mx)
+        self.a = self.SP/self.SS
+        self.b = self.My - (a*self.Mx)
        
     def predict(self, x, dplaces=3):
         return round(a*x+b, dplaces)
