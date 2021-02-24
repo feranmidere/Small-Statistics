@@ -1,14 +1,21 @@
-# Line of Best fit module
 import numpy as np
 
-def leastsquares(x, y):
-    Mx = np.mean(x)
-    My = np.mean(y)
+class SimpleLinearRegression:
+    def __init__(self),
+        pass
+       
+    def fit(self, x, y):
+        self.independent = x
+        self.dependent = y
+        
+        self.Mx = np.mean(x)
+        self.My = np.mean(y)
 
-    SS = sum((x-Mx)**2)
-    SP = sum((x-Mx)*(y-My))
+        self.SS = sum((x-Mx)**2)
+        self.SP = sum((x-Mx)*(y-My))
 
-    a = round(SP/SS,4)
-    b = round(My - (a*Mx),4)
-    yhat = '{0}x+{1}'.format(a, b)
-    print('yhat='+yhat)
+        self.a = SP/SS
+        self.b = My - (a*Mx)
+       
+    def predict(self, x, dplaces=3):
+        return round(a*x+b, dplaces)
