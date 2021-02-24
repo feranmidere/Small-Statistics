@@ -19,7 +19,7 @@ a = SP ÷ SS where SP is the sum of products and SS is the sum of squares in the
 
 The equation used to calculate the y-intercept is:
 
-**b = y̅ - bx̅**
+**b = y̅ - ax̅**
 
 # How to use:
 
