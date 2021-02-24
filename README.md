@@ -11,7 +11,7 @@ The model uses the formula y = ax + b where a is the gradient and b is the y-int
 
 The equation used to calculate the gradient is:
 
-a = SP<over>SS where SP is the sum of products and SS is the sum of squares in the data.
+a = SP/SS where SP is the sum of products and SS is the sum of squares in the data.
 
 SP can be calculated by (x-x<sub>mean</sub>)<sup>2</sup> for each value of x and taking the sum of the results.
 
