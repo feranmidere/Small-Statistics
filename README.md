@@ -1,4 +1,5 @@
 # Simple Linear Regression
+
  
 This is a function which can be used to display the equation of a least squares regression line with the dependent variable y
 and independent variable x.
@@ -18,3 +19,11 @@ SS can be calculated by (x-x<sub>mean</sub>)(y-y<sub>mean</sub>) for each value 
 The equation used to calculate the y-intercept is:
 
 b = y<sub>mean</sub> - bx<sub>mean</sub>
+
+# How to use:
+
+ The class needs to be defined, however takes no parameters upon initiation. 
+ 
+ The fit method should be used to fit the linear regression with arrays x and y. 
+ 
+ The predict method should be used to store predictions based on the equation of the least squares regression line.
