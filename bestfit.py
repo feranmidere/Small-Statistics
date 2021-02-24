@@ -18,4 +18,4 @@ class SimpleLinearRegression:
         self.b = self.My - (self.a*self.Mx)
        
     def predict(self, x, dplaces=3):
-        return round(a*x+b, dplaces)
+        return round(self.a*x+self.b, dplaces)
