@@ -18,7 +18,7 @@ The equation used to calculate the gradient is:
 ![](SP.png)
 
 The equation used to calculate the y-intercept is:
-
+![](b.png)
 The fit method will also calculate the product moment correlation coefficient using the equation:
 
 ![product moment correlation coefficient](r.png)
