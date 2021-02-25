@@ -20,7 +20,10 @@ class SimpleLinearRegression:
         self.r = self.SP / np.sqrt(self.SSx * self.SSy) 
        
     def predict(self, x, dplaces=3):
-        return round(self.a*x+self.b, dplaces)
-    
+        try:
+            return round(self.a*x+self.b, dplaces)
+        except:
+            return np.around(self.a*x+self.b, dplaces)
+   
     def geteq(self):
         return 'y = {0}x + {1}'.format(self.a,self.b)
