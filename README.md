@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Simple Linear Regression
 
 *Only functional with bivariate data (x and y, where x is the sole feature and y is the target) and not multivariate data*
@@ -11,19 +12,19 @@ The model uses the formula ŷ = ax + b where a is the gradient and b is the y-in
 
 The equation used to calculate the gradient is:
 
-![](README\a.png)
+![](.README\a.png)
 
-![](README\SS.png)
+![](.README\SS.png)
 
-![](README\SP.png)
+![](.README\SP.png)
 
 The equation used to calculate the y-intercept is:
 
-![](README\b.png)
+![](.README\b.png)
 
 The fit method will also calculate the product moment correlation coefficient using the equation:
 
-![](README\r.png)
+![](.README\r.png)
 
 # How to use:
 
