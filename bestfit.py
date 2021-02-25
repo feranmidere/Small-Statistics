@@ -23,4 +23,4 @@ class SimpleLinearRegression:
         return round(self.a*x+self.b, dplaces)
     
     def geteq(self):
-        return 'y = {0}x + {1}'.format(a,b)
+        return 'y = {0}x + {1}'.format(self.a,self.b)
