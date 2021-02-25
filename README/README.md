@@ -11,7 +11,7 @@ The model uses the formula ŷ = ax + b where a is the gradient and b is the y-in
 
 The equation used to calculate the gradient is:
 
-![](equaimage.png)
+![](a.png)
 
 ![](SS.png)
 
