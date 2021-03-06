@@ -1,5 +1,7 @@
 # Simple Linear Regression
 
+# Regressor:
+
 *Only functional with bivariate data (x and y, where x is the sole feature and y is the target) and not multivariate data*
  
 This is a class which can be used to calculate a least squares regression line with the dependent variable y
@@ -25,10 +27,28 @@ The fit method will also calculate the product moment correlation coefficient us
 
 ![](r.png)
 
+# Covariance Function
+
+The population and sample covariances of a set of values x and a set of values y are denoted by:
+
+![](Covariance-Formula.png)
+
+# Correlation Function
+
+The correlation of sets x and y is denoted by:
+
+![](correlation.png)
+
+# Euclidian Distance Function
+
+The euclidian - or pythagorean - distance between two points is denoted by:
+
+![](dis.png)
+
 # How to use:
 
- The class needs to be defined, however takes no parameters upon initiation. 
+The class needs to be defined, however takes no parameters upon initiation. 
  
- The fit method should be used to fit the linear regression with arrays x and y. 
+The fit method should be used to fit the linear regression with arrays x and y. 
  
- The predict method should be used to store predictions based on the equation of the least squares regression line.
+The predict method should be used to store predictions based on the equation of the least squares regression line.
