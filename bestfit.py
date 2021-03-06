@@ -31,9 +31,13 @@ class SimpleLinearRegression:
     def geteq(self): # returns a string of the equation
         return 'y = {0}x + {1}'.format(self.a,self.b)
     
-def covariance(x,y): # x and y should be numpy arrays
-    Sy =(x-np.mean(x))*(y-np.mean(y))
-    return sum(Sy / len(x))
+def pcovariance(x,y): # x and y should be numpy arrays
+    Sy = sum((x-np.mean(x))*(y-np.mean(y)))
+    return Sy / len(x)
+
+def scovariance(x,y): # x and y should be numpy arrays
+    Sy = sum((x-np.mean(x))*(y-np.mean(y)))
+    return Sy / (len(x)-1)
 
 def correlation(x,y): # x and y should be numpy arrays
     SSy = sum((x-np.mean(x))*(y-np.mean(y)))
