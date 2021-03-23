@@ -2,34 +2,45 @@ import numpy as np
 
 class SimpleLinearRegression:
     def __init__(self):
+        self.attributes = {}
         pass
        
     def fit(self, x, y): # x and y should be numpy arrays
-        self.independent = x
-        self.dependent = y
+        if type(x) != np.ndarray or type(y) != np.ndarray:
+            raise ValueError('Input should be numpy ndarrays.')
+        else:
+            pass
+    
+        self.attributes['x'] = x
+        self.attributes['y'] = y
         
-        self.Mx = np.mean(x)
-        self.My = np.mean(y)
+        self.attributes['Mx'] = np.mean(x)
+        self.attributes['My'] = np.mean(y)
 
-        self.SSx = sum((x-self.Mx)**2)
-        self.SSy = sum((y-self.My)**2)
-        self.SP = sum((x-self.Mx)*(y-self.My))
+        self.attributes['SSx'] = np.sum((x-self.attributes['Mx'])**2)
+        self.attributes['SSy'] = np.sum((y-self.attributes['My'])**2)
+        self.attributes['SP'] = np.sum((x-self.attributes['Mx'])*(y-self.attributes['My']))
 
-        self.a = self.SP/self.SSx
-        self.b = self.My - (self.a*self.Mx)
-        self.r = self.SP / np.sqrt(self.SSx * self.SSy)  # pearson product moment correlation coefficent
+        self.attributes['a'] = self.attributes['SP'] / self.attributes['SSx']
+        self.attributes['b'] = self.attributes['My'] - (self.attributes['a']*self.attributes['Mx'])
+        self.attributes['r'] = self.attributes['SP'] / np.sqrt(self.attributes['SSx'] * self.attributes['SSy'])  # pearson product moment correlation coefficent
+        
+        return self
        
     def predict(self, x, dplaces=None): # provide rounding accuracy in decimal places, no rounding is done if not provided
-        try:
-            try:
+        if dplaces != None:
+            if type(x) != int or float:
                 return round(self.a*x+self.b, dplaces)
-            except:
+            else:
                 return np.around(self.a*x+self.b, dplaces)
-        except:
-            return self.a*x+self.b
+        else:
+            return self.attributes['a']*x+self.attributes['b']
    
-    def geteq(self): # returns a string of the equation
-        return 'y = {0}x + {1}'.format(self.a,self.b)
+    def eq(self): # returns a string of the equation
+        print('y = {0}x + {1}'.format(self.attributes['a'],self.attributes['b']))
+    
+    def corr(self):
+        return self.attributes['r']
     
 def pcovariance(x,y): # x and y should be numpy arrays
     Sy = sum((x-np.mean(x))*(y-np.mean(y)))
