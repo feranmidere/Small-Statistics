@@ -3,13 +3,10 @@ import numpy as np
 class SimpleLinearRegression:
     def __init__(self):
         self.attributes = {}
-        pass
        
     def fit(self, x, y): # x and y should be numpy arrays
         if type(x) != np.ndarray or type(y) != np.ndarray:
             raise ValueError('Input should be numpy ndarrays.')
-        else:
-            pass
     
         self.attributes['x'] = x
         self.attributes['y'] = y
@@ -23,23 +20,25 @@ class SimpleLinearRegression:
 
         self.attributes['a'] = self.attributes['SP'] / self.attributes['SSx']
         self.attributes['b'] = self.attributes['My'] - (self.attributes['a']*self.attributes['Mx'])
-        self.attributes['r'] = self.attributes['SP'] / np.sqrt(self.attributes['SSx'] * self.attributes['SSy'])  # pearson product moment correlation coefficent
+        self.attributes['r'] = self.attributes['SP'] / np.sqrt(self.attributes['SSx'] * self.attributes['SSy'])  
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        # pearson product moment correlation coefficent
         
         return self
        
     def predict(self, x, dplaces=None): # provide rounding accuracy in decimal places, no rounding is done if not provided
         if dplaces != None:
             if type(x) != int or float:
-                return round(self.a*x+self.b, dplaces)
+                return round(self.attributes['a']*x+self.attributes['b'], dplaces)
             else:
-                return np.around(self.a*x+self.b, dplaces)
+                return np.around(self.attributes['a']*x+self.attributes['b'], dplaces)
         else:
             return self.attributes['a']*x+self.attributes['b']
    
-    def eq(self): # returns a string of the equation
+    def get_eq(self): # returns a string of the equation
         print('y = {0}x + {1}'.format(self.attributes['a'],self.attributes['b']))
     
-    def corr(self):
+    def corr_coeff(self):
         return self.attributes['r']
     
 def pcovariance(x,y): # x and y should be numpy arrays
