@@ -7,28 +7,42 @@ class SimpleLinearRegression:
 
     def fit(self, x, y): # x and y should be numpy arrays, 1D dataframes, series or lists
         if type(x) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-            raise TypeError('Incorrect input type - got', type(x))
+            raise TypeError('Incorrect input type - got {0}'.format(type(x)))
 
-        elif type(x) == pd.DataFrame or type(x) == pd.Series:
-            if x.ndim == 1:
-                x = x.toarray().reshape(-1)
+        elif type(x) == pd.DataFrame:
+            if x.ndim == 2:
+                x = x.to_numpy().reshape(-1)
             else:
                 raise ValueError('Input is not 1D')
+
+        elif type(x) == pd.Series:
+            x = x.to_numpy().reshape(-1)
 
         elif type(x) == list:
             x = np.array(x).reshape(-1)
 
-        if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-            raise TypeError('Incorrect input type - got', type(y))
+        else:
+            if x.ndim != 1:
+                raise ValueError('Input is not 1D')
 
-        elif type(y) == pd.DataFrame or type(y) == pd.Series:
-            if y.ndim == 1:
-                y = y.toarray().reshape(-1)
+        if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
+            raise TypeError('Incorrect input type - got {0}'.format(type(y)))
+
+        elif type(y) == pd.DataFrame:
+            if y.ndim == 2:
+                y = y.to_numpy().reshape(-1)
             else:
                 raise ValueError('Input is not 1D')
 
+        elif type(y) == pd.Series:
+            y = y.to_numpy().reshape(-1)
+
         elif type(y) == list:
-            x = np.array(x).reshape(-1)
+            y = np.array(y).reshape(-1)
+
+        else:
+            if y.ndim != 1:
+                raise ValueError('Input is not 1D')
 
 
         if len(x) == 1:
@@ -60,16 +74,23 @@ class SimpleLinearRegression:
                                         # x should be a numpy array, 1D dataframe, series or list
 
         if type(x) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-            raise TypeError('Incorrect input type - got', type(x))
+            raise TypeError('Incorrect input type - got {0}'.format(type(x)))
 
-        elif type(x) == pd.DataFrame or type(x) == pd.Series:
-            if x.ndim == 1:
-                x = x.toarray().reshape(-1)
+        elif type(x) == pd.DataFrame:
+            if x.ndim == 2:
+                x = x.to_numpy().reshape(-1)
             else:
                 raise ValueError('Input is not 1D')
 
+        elif type(x) == pd.Series:
+            x = x.to_numpy().reshape(-1)
+
         elif type(x) == list:
             x = np.array(x).reshape(-1)
+
+        else:
+            if x.ndim != 1:
+                raise ValueError('Input is not 1D')
 
         if dplaces != None:
             if type(x) != int or float:
@@ -92,78 +113,148 @@ class SimpleLinearRegression:
 
 def pcovariance(x,y): # x and y should be numpy arrays, 1D dataframes, series or lists
     if type(x) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-        raise TypeError('Incorrect input type - got', type(x))
+        raise TypeError('Incorrect input type - got {0}'.format(type(x)))
 
-    elif type(x) == pd.DataFrame or type(x) == pd.Series:
-        if x.ndim == 1:
-            x = x.toarray().reshape(-1)
+    elif type(x) == pd.DataFrame:
+        if x.ndim == 2:
+            x = x.to_numpy().reshape(-1)
         else:
             raise ValueError('Input is not 1D')
+
+    elif type(x) == pd.Series:
+        x = x.to_numpy().reshape(-1)
 
     elif type(x) == list:
         x = np.array(x).reshape(-1)
 
-    if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-        raise TypeError('Incorrect input type - got', type(y))
+    else:
+        if x.ndim != 1:
+            raise ValueError('Input is not 1D')
 
-    elif type(y) == pd.DataFrame or type(y) == pd.Series:
-        if y.ndim == 1:
-            y = y.toarray().reshape(-1)
+    if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
+        raise TypeError('Incorrect input type - got {0}'.format(type(y)))
+
+    elif type(y) == pd.DataFrame:
+        if y.ndim == 2:
+            y = y.to_numpy().reshape(-1)
         else:
             raise ValueError('Input is not 1D')
 
+    elif type(y) == pd.Series:
+        y = y.to_numpy().reshape(-1)
+
     elif type(y) == list:
-        x = np.array(x).reshape(-1)
+        y = np.array(y).reshape(-1)
+
+    else:
+        if y.ndim != 1:
+            raise ValueError('Input is not 1D')
+
+
+    if len(x) == 1:
+        raise ValueError('Cannot use scalar values')
+
+    if len(y) == 1:
+        raise ValueError('Cannot use scalar values')
+
 
     Sy = sum((x-np.mean(x))*(y-np.mean(y)))
     return Sy / len(x)
 
 def scovariance(x,y): # x and y should be numpy arrays, 1D dataframes, series or lists
     if type(x) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-        raise TypeError('Incorrect input type - got', type(x))
+        raise TypeError('Incorrect input type - got {0}'.format(type(x)))
 
-    elif type(x) == pd.DataFrame or type(x) == pd.Series:
-        if x.ndim == 1:
-            x = x.toarray().reshape(-1)
+    elif type(x) == pd.DataFrame:
+        if x.ndim == 2:
+            x = x.to_numpy().reshape(-1)
         else:
             raise ValueError('Input is not 1D')
+
+    elif type(x) == pd.Series:
+        x = x.to_numpy().reshape(-1)
 
     elif type(x) == list:
         x = np.array(x).reshape(-1)
 
-    if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-        raise TypeError('Incorrect input type - got', type(y))
+    else:
+        if x.ndim != 1:
+            raise ValueError('Input is not 1D')
 
-    elif type(y) == pd.DataFrame or type(y) == pd.Series:
-        if y.ndim == 1:
-            y = y.toarray().reshape(-1)
+    if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
+        raise TypeError('Incorrect input type - got {0}'.format(type(y)))
+
+    elif type(y) == pd.DataFrame:
+        if y.ndim == 2:
+            y = y.to_numpy().reshape(-1)
         else:
             raise ValueError('Input is not 1D')
+
+    elif type(y) == pd.Series:
+        y = y.to_numpy().reshape(-1)
+
+    elif type(y) == list:
+        y = np.array(y).reshape(-1)
+
+    else:
+        if y.ndim != 1:
+            raise ValueError('Input is not 1D')
+
+
+    if len(x) == 1:
+        raise ValueError('Cannot use scalar values')
+
+    if len(y) == 1:
+        raise ValueError('Cannot use scalar values')
 
     Sy = sum((x-np.mean(x))*(y-np.mean(y)))
     return Sy / (len(x)-1)
 
 def correlation(x,y): # x and y should be numpy arrays, 1D dataframes, series or lists
     if type(x) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-        raise TypeError('Incorrect input type - got', type(x))
+        raise TypeError('Incorrect input type - got {0}'.format(type(x)))
 
-    elif type(x) == pd.DataFrame or type(x) == pd.Series:
-        if x.ndim == 1:
-            x = x.toarray().reshape(-1)
+    elif type(x) == pd.DataFrame:
+        if x.ndim == 2:
+            x = x.to_numpy().reshape(-1)
         else:
             raise ValueError('Input is not 1D')
+
+    elif type(x) == pd.Series:
+        x = x.to_numpy().reshape(-1)
 
     elif type(x) == list:
         x = np.array(x).reshape(-1)
 
-    if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
-        raise TypeError('Incorrect input type - got', type(y))
+    else:
+        if x.ndim != 1:
+            raise ValueError('Input is not 1D')
 
-    elif type(y) == pd.DataFrame or type(y) == pd.Series:
-        if y.ndim == 1:
-            y = y.toarray().reshape(-1)
+    if type(y) not in [np.ndarray, pd.DataFrame, pd.Series, list]:
+        raise TypeError('Incorrect input type - got {0}'.format(type(y)))
+
+    elif type(y) == pd.DataFrame:
+        if y.ndim == 2:
+            y = y.to_numpy().reshape(-1)
         else:
             raise ValueError('Input is not 1D')
+
+    elif type(y) == pd.Series:
+        y = y.to_numpy().reshape(-1)
+
+    elif type(y) == list:
+        y = np.array(y).reshape(-1)
+
+    else:
+        if y.ndim != 1:
+            raise ValueError('Input is not 1D')
+
+
+    if len(x) == 1:
+        raise ValueError('Cannot use scalar values')
+
+    if len(y) == 1:
+        raise ValueError('Cannot use scalar values')
 
     SSy = sum((x-np.mean(x))*(y-np.mean(y)))
     cov = SSy / len(x)
